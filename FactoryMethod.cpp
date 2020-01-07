@@ -57,8 +57,8 @@ class SimpleHome : public Home{
 	}
 };
 
-//int main() {
-//	auto h = new MagicHome();
-//}
+int main() {
+	auto h = new MagicHome();
+}
 
 
