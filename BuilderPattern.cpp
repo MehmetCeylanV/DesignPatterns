@@ -39,11 +39,11 @@ public:
 	}
 };
 
-//int main() {
-//	//The Director assembles a car instance in the example above,
-//	//delegating the construction to a separate builder object that it has been given to the Director by the Client.
-//	auto b = new FerrariBuilder();
-//	auto d = new SportsCarBuildDirector(b);
-//	d->construct();
-//	auto c = b->build();
-//}
+int main() {
+	//The Director assembles a car instance in the example above,
+	//delegating the construction to a separate builder object that it has been given to the Director by the Client.
+	auto b = new FerrariBuilder();
+	auto d = new SportsCarBuildDirector(b);
+	d->construct();
+	auto c = b->build();
+}
