@@ -50,9 +50,9 @@ AbstractFactory* fac(int x){
 		return new LinuxFactory();
 }
 
-//int main() {
-//	auto f = fac(1);
-//	Button* b = f->createButton();
-//	b->paint();
-//}
+int main() {
+	auto f = fac(1);
+	Button* b = f->createButton();
+	b->paint();
+}
 
