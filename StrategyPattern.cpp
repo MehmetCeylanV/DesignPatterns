@@ -1,7 +1,7 @@
 /*
- * BridgePattern.cpp
+ * StrategyPattern.cpp
  *
- *  Created on: Jan 13, 2020
+ *  Created on: Jan 14, 2020
  *      Author: mehmetcey
  */
 
@@ -26,26 +26,21 @@ class LogtoDisplay: public Logger{
 };
 
 class App{
-protected:
 	std::shared_ptr<Logger> logger;
 public:
 	App(std::shared_ptr<Logger> logger) : logger(logger){}
 
-	virtual void error(std::string msg) = 0;
-};
-
-class App1 : public App{
-public:
-	App1(std::shared_ptr<Logger> logger) : App(logger){}
-
 	void error(std::string msg){
 		logger->log(msg);
+	}
+
+	void setLogger(std::shared_ptr<Logger> logger){
+		this->logger = logger;
 	}
 };
 
 //int main(){
-//	std::shared_ptr<Logger> lg(new LogtoFile());
-//	std::shared_ptr<App> app(new App1(lg));
+//	std::shared_ptr<Logger> logger(new LogtoFile());
+//	std::shared_ptr<App> app(new App(logger));
 //	app->error("Error");
 //}
-
