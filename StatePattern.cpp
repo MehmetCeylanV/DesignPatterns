@@ -23,21 +23,21 @@ class Webpage{
 
 	class Closing : public State{
 		void goToNewState(Webpage* page) override {
-			std::cout << "Page is closing next state is closed" << std::endl;
+			std::cout << "Page is closing, next state is closed" << std::endl;
 			page->setState(new Closed());
 		}
 	};
 
 	class Opened : public State{
 		void goToNewState(Webpage* page) override {
-			std::cout << "Page is opened next state is closing" << std::endl;
+			std::cout << "Page is opened, next state is closing" << std::endl;
 			page->setState(new Closing());
 		}
 	};
 
 	class Opening : public State{
 		void goToNewState(Webpage* page) override {
-			std::cout << "Page is opening next state is opened" << std::endl;
+			std::cout << "Page is opening, next state is opened" << std::endl;
 			page->setState(new Opened());
 		}
 	};
@@ -59,14 +59,14 @@ public:
 	};
 };
 
-int main(){
-	std::unique_ptr<Webpage> p(new Webpage());
-	p->run();
-	p->run();
-	p->run();
-	p->run();
-	p->run();
-}
+//int main(){
+//	std::unique_ptr<Webpage> p(new Webpage());
+//	p->run();
+//	p->run();
+//	p->run();
+//	p->run();
+//	p->run();
+//}
 
 
 
